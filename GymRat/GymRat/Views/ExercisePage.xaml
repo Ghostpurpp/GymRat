@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GymRat.Views.ExercisePage"
+             xmlns:vm="clr-namespace:GymRat.ViewModels"
+             Title="Exercises"
+             BackgroundColor="{StaticResource Secondary}">
+
+    <ContentPage.BindingContext>
+        <vm:ExerciseViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="" Command="{Binding DeleteSessionBtn}"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="10,15">
+            <ListView 
+                ItemsSource="{Binding Exercises}" 
+                IsPullToRefreshEnabled="True" 
+                RefreshCommand="{Binding}">
+                <ListView.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label 
+                            Text="Name" 
+                            HorizontalOptions="Fill"  
+                            Grid.Column="0" 
+                            FontSize="Medium" 
+                            TextColor="White" 
+                            HorizontalTextAlignment="Center"/>
+                        <Label 
+                            Text="Reps"
+                            HorizontalOptions="Fill"  
+                            Grid.Column="1" 
+                            FontSize="Medium" 
+                            TextColor="White" 
+                            HorizontalTextAlignment="Center"/>
+                        <Label 
+                            Text="Sets" 
+                            HorizontalOptions="Fill"  
+                            Grid.Column="2" 
+                            FontSize="Medium" 
+                            TextColor="White" 
+                            HorizontalTextAlignment="Center"/>
+                        <Label 
+                            Text="Duration" 
+                            HorizontalOptions="Fill"  
+                            Grid.Column="3" 
+                            FontSize="Medium" 
+                            TextColor="White" 
+                            HorizontalTextAlignment="Center"/>
+                    </Grid>
+                </ListView.Header>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label 
+                                    Grid.Column="0" 
+                                    Text ="{Binding Name}"
+                                    TextColor="White" 
+                                    HorizontalOptions="FillAndExpand" 
+                                    HorizontalTextAlignment="Center" 
+                                    Margin="1"/>
+                                <Label 
+                                    Grid.Column="1" 
+                                    Text ="{Binding Reps}"
+                                    TextColor="White"
+                                    HorizontalOptions="FillAndExpand" 
+                                    HorizontalTextAlignment="Center" 
+                                    Margin="1"/>
+                                <Label 
+                                    Grid.Column="2" 
+                                    Text ="{Binding Sets}"
+                                    TextColor="White"
+                                    HorizontalOptions="FillAndExpand" 
+                                    HorizontalTextAlignment="Center" 
+                                    Margin="1"/>
+                                <Label 
+                                    Grid.Column="3" 
+                                    Text ="{Binding Duration}"
+                                    TextColor="White" 
+                                    HorizontalOptions="FillAndExpand" 
+                                    HorizontalTextAlignment="Center" 
+                                    Margin="1"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button 
+                Text="Add Exercise" 
+                TextColor="{StaticResource Secondary}"
+                HorizontalOptions="FillAndExpand" 
+                VerticalOptions="End"
+                BackgroundColor="{StaticResource Primary}"
+                Command="{Binding AddExercise}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

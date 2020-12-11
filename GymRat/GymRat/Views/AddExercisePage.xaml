@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:GymRat.ViewModels"
+             x:Class="GymRat.Views.AddExercisePage"
+             Title="Add New Exercise"
+             BackgroundColor="{StaticResource Secondary}">
+
+    <ContentPage.BindingContext>
+        <vm:AddExerciseViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="15">
+            <StackLayout>
+                <Label 
+                    Text="Exercise Name" 
+                    TextColor="White"
+                    FontSize="Medium"/>
+                <Entry 
+                    Text="{Binding ExerciseName}" 
+                    FontSize="Medium" 
+                    Placeholder="Name" 
+                    PlaceholderColor="White"
+                    HorizontalOptions="FillAndExpand"/>
+                <Label 
+                    Text="Exercise Reps" 
+                    TextColor="White"
+                    FontSize="Medium"/>
+                <Entry 
+                    Text="{Binding ExerciseReps, FallbackValue='0'}" 
+                    TextColor="White"
+                    FontSize="Medium" 
+                    Placeholder="Reps" 
+                    PlaceholderColor="White" 
+                    HorizontalOptions="FillAndExpand"/>
+                <Label 
+                    Text="Exercise Sets" 
+                    TextColor="White"
+                    FontSize="Medium"/>
+                <Entry 
+                    Text="{Binding ExerciseSets, FallbackValue='0'}" 
+                    TextColor="White"
+                    FontSize="Medium" 
+                    Placeholder="Sets" 
+                    PlaceholderColor="White" 
+                    HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <Label Text="Duration" FontSize="Large" TextColor="White" Margin="0,5"/>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Label 
+                        Text="Hours" 
+                        TextColor="White"
+                        FontSize="Medium"/>
+                    <Entry 
+                        Text="{Binding Hours, FallbackValue='0'}" 
+                        TextColor="White"   
+                        FontSize="Medium" 
+                        Placeholder="Hours" 
+                        HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Label 
+                        Text="Minutes" 
+                        TextColor="White"
+                        FontSize="Medium"/>
+                    <Entry 
+                        Text="{Binding Minutes, FallbackValue='0'}" 
+                        TextColor="White" 
+                        FontSize="Medium" 
+                        Placeholder="Minutes" 
+                        HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Label 
+                        Text="Seconds" 
+                        TextColor="White"
+                        FontSize="Medium"/>
+                    <Entry 
+                        Text="{Binding Seconds, FallbackValue='0'}" 
+                        TextColor="White" 
+                        FontSize="Medium" 
+                        Placeholder="Seconds" 
+                        HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+            <Button Text="+" FontSize="Large" HorizontalOptions="FillAndExpand" Command="{Binding AddNewExercise}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
