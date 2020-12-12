@@ -26,12 +26,14 @@ namespace GymRat.ViewModels
         }
 
         public ICommand AddSessionBtn { get; set; }
+        public ICommand SyncSessionBtn { get; set; }
 
         public SessionViewModel()
         {
             sessionService = new SessionService();
             LoadSessions();
             AddSessionBtn = new Command(AddSession);
+            SyncSessionBtn = new Command(LoadSessions);
         }
 
         private async void AddSession()

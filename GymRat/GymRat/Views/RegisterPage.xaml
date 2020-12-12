@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GymRat.Views.RegisterPage"
-             xmlns:vm="clr-namespace:GymRat.ViewModels">
+             xmlns:vm="clr-namespace:GymRat.ViewModels"
+             Title="Create Account"
+             BackgroundColor="{StaticResource Secondary}">
 
     <ContentPage.BindingContext>
         <vm:RegisterViewModel/>
@@ -10,30 +12,33 @@
     
     <ContentPage.Content>
         <StackLayout Padding="10" VerticalOptions="Center">
-            <Button Text="{Binding DisplayPicture}" Command="{Binding GetImageFile}" Margin="0,10"/>
+            <Button 
+                Text="{Binding DisplayPicture}" 
+                Command="{Binding GetImageFile}" 
+                Margin="0,10"/>
             <Entry 
                 Text="{Binding DisplayName}" 
                 Placeholder="Username(Not Email)" 
-                PlaceholderColor="Black" 
+                PlaceholderColor="{StaticResource Primary}" 
                 Visual="Material"
                 HorizontalOptions="FillAndExpand"/>
             <Entry 
                 Text="{Binding Email}" 
                 Placeholder="Email" 
-                PlaceholderColor="Black" 
+                PlaceholderColor="{StaticResource Primary}" 
                 Visual="Material"
                 HorizontalOptions="FillAndExpand"/>
             <Entry 
                 Text="{Binding Password}" 
                 Placeholder="Password" 
-                PlaceholderColor="Black" 
+                PlaceholderColor="{StaticResource Primary}" 
                 IsPassword="True" 
                 Visual="Material"
                 HorizontalOptions="FillAndExpand"/>
             <Entry 
                 Text="{Binding ConfirmPassword}" 
                 Placeholder="Confirm Password" 
-                PlaceholderColor="Black" 
+                PlaceholderColor="{StaticResource Primary}" 
                 IsPassword="True" 
                 Visual="Material"
                 HorizontalOptions="FillAndExpand"/>

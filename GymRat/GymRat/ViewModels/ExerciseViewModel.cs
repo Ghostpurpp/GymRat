@@ -31,6 +31,7 @@ namespace GymRat.ViewModels
 
         public ICommand AddExercise { get; set; }
         public ICommand DeleteSessionBtn { get; set; }
+        public ICommand SyncSessionBtn { get; set; }
 
         public ExerciseViewModel()
         {
@@ -40,6 +41,7 @@ namespace GymRat.ViewModels
 
             AddExercise = new Command(AddNewExercise);
             DeleteSessionBtn = new Command(DeleteSessionAsync);
+            SyncSessionBtn = new Command(() => LoadExercises(CurrentSession.SessionId));
         }
 
         private async void DeleteSessionAsync()

@@ -4,11 +4,11 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
              xmlns:vm="clr-namespace:GymRat.ViewModels"
              x:Class="GymRat.Views.LoginPage"
              NavigationPage.HasNavigationBar="False"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource Secondary}">
 
     <ContentPage.BindingContext>
         <vm:LogInViewModel/>
@@ -18,48 +18,25 @@
         <StackLayout>
             <StackLayout Padding="25" VerticalOptions="StartAndExpand">
                 <Image Source="barbell.png" HorizontalOptions="Center" HeightRequest="150" WidthRequest="150"/>
-                <Label Text="Gym Rat" FontSize="Large" TextColor="Black" HorizontalOptions="Center"/>
+                <Label Text="Gym Rat" FontSize="Large" TextColor="{StaticResource Primary}" HorizontalOptions="Center"/>
             </StackLayout>
             <StackLayout Padding="25" VerticalOptions="CenterAndExpand">
                 <StackLayout>
-                    <inputLayout:SfTextInputLayout 
-                        LeadingViewPosition="Inside"
-                        ContainerType="Outlined"
-                        Hint="Email"
-                        UnfocusedColor="Black"
-                        UnfocusedStrokeWidth="2"
-                        FocusedColor="Blue"
-                        FocusedStrokeWidth="2"
-                        Margin="0,-10">
-                        <Entry 
-                            Text="{Binding Email}" 
-                            Visual="Material"
-                            HorizontalOptions="FillAndExpand"/>
-                        <inputLayout:SfTextInputLayout.LeadingView>
-                            <Label Text="&#x1F5D3;" Scale="1.5"/>
-                        </inputLayout:SfTextInputLayout.LeadingView>
-                    </inputLayout:SfTextInputLayout>
-
-                    <inputLayout:SfTextInputLayout 
-                        LeadingViewPosition="Inside"
-                        ContainerType="Outlined"
-                        Hint="Password"
-                        UnfocusedColor="Black"
-                        UnfocusedStrokeWidth="2"
-                        FocusedColor="Blue"
-                        FocusedStrokeWidth="2"
-                        Margin="0,-5">
-                        <Entry 
-                            Text="{Binding Password}" 
-                            IsPassword="True" 
-                            Visual="Material"
-                            HorizontalOptions="FillAndExpand"/>
-                        <inputLayout:SfTextInputLayout.LeadingView>
-                            <Label Text="&#x1F5D3;" Scale="1.5"/>
-                        </inputLayout:SfTextInputLayout.LeadingView>
-                    </inputLayout:SfTextInputLayout>
+                    <Entry 
+                        Text="{Binding Email}" 
+                        Visual="Material"
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="Email"
+                        PlaceholderColor="{StaticResource Primary}"/>
+                    <Entry 
+                        Text="{Binding Password}" 
+                        IsPassword="True" 
+                        Visual="Material"
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="Password"
+                        PlaceholderColor="{StaticResource Primary}"/>
                     <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
-                        <Label Text="Need an Account?" TextColor="Black" HorizontalOptions="StartAndExpand"/>
+                        <Label Text="Need an Account?" TextColor="{StaticResource Primary}" HorizontalOptions="StartAndExpand"/>
                         <Button 
                             Text="Register"
                             Command="{Binding RegisterBtn}"
@@ -67,20 +44,27 @@
                             WidthRequest="70"
                             BackgroundColor="Transparent"
                             Padding="0"
-                            TextColor="OrangeRed"
+                            TextColor="{StaticResource Primary}"
                             VerticalOptions="StartAndExpand"/>
                     </StackLayout>
                 </StackLayout>
                 <Button 
                     Text="Log In"
-                    BackgroundColor="OrangeRed"
+                    BackgroundColor="{StaticResource Primary}"
                     HorizontalOptions="FillAndExpand"
                     Command="{Binding FirebaseLogIn}"/>
             </StackLayout>
             
             <StackLayout Padding="25" Margin="0" VerticalOptions="EndAndExpand">
-                <Label Text="Other Log-In Options" TextColor="Black" HorizontalOptions="Center"/>
-                <ImageButton HorizontalOptions="FillAndExpand" Source="FacebookLogo.png" Command="{Binding FacebookLogIn}"/>
+                <Label 
+                    Text="Other Log-In Options" 
+                    TextColor="{StaticResource Primary}" 
+                    HorizontalOptions="Center"/>
+                <ImageButton
+                    CornerRadius="10"
+                    HorizontalOptions="FillAndExpand" 
+                    Source="FacebookLogo.png" 
+                    Command="{Binding FacebookLogIn}"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

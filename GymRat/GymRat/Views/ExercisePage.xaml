@@ -11,7 +11,8 @@
     </ContentPage.BindingContext>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="" Command="{Binding DeleteSessionBtn}"/>
+        <ToolbarItem Text="Sync" IconImageSource="refresh.png" Command="{Binding SyncSessionBtn}"/>
+        <ToolbarItem IconImageSource="delete.png" Command="{Binding DeleteSessionBtn}"/>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>

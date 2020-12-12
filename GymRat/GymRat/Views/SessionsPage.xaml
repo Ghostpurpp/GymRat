@@ -4,7 +4,6 @@
              x:Class="GymRat.Views.SessionsPage"
              xmlns:vm="clr-namespace:GymRat.ViewModels"
              Title="Sessions"
-             Appearing="ContentPage_Appearing"
              BackgroundColor="{StaticResource Secondary}">
 
     <ContentPage.BindingContext>
@@ -13,6 +12,7 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="add_button.png" Command="{Binding AddSessionBtn}"/>
+        <ToolbarItem Text="Sync" IconImageSource="refresh.png" Command="{Binding SyncSessionBtn}"/>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
