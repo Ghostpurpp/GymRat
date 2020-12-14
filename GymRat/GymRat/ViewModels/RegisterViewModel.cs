@@ -20,17 +20,6 @@ namespace GymRat.ViewModels
             }
         }
 
-        private string displayPicture;
-        public string DisplayPicture
-        {
-            get => displayPicture;
-            set
-            {
-                displayPicture = value;
-                OnPropertyChanged();
-            }
-        }
-
         private string displayName;
         public string DisplayName
         {
@@ -85,7 +74,6 @@ namespace GymRat.ViewModels
             RegisterBtn = new Command(RegisterFirebaseUser);
             LoginBtn = new Command(LoginUser);
             GetImageFile = new Command(GetImage);
-            DisplayPicture = "Choose Picture";
         }
 
         private async void LoginUser()
@@ -112,10 +100,9 @@ namespace GymRat.ViewModels
             var result = await FilePicker.PickAsync(new PickOptions { FileTypes = FilePickerFileType.Images, PickerTitle = "Pick an Image"});
             if (result != null)
             {
-                DisplayPicture = $"File Name: {result.FileName}";
-                //var stream = await result.OpenReadAsync();
-                //var imageStream = ImageSource.FromStream(() => stream);
-                var str = JsonConvert.SerializeObject(result);
+                var stream = await result.OpenReadAsync();
+                var imageStream = ImageSource.FromStream(() => stream);
+                var str = JsonConvert.SerializeObject(imageStream);
                 PictureFile = str;
             }
         }

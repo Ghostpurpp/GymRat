@@ -19,6 +19,7 @@
                     FontSize="Medium"/>
                 <Entry 
                     Text="{Binding ExerciseName}" 
+                    TextColor="White"
                     FontSize="Medium" 
                     Placeholder="Name" 
                     PlaceholderColor="White"

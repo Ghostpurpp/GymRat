@@ -14,7 +14,10 @@ namespace GymRat
             InitializeComponent();
             if (string.IsNullOrEmpty(Preferences.Get("AppUser", string.Empty)))
             {
-                MainPage = new NavigationPage(new LoginPage());
+                MainPage = new NavigationPage(new LoginPage())
+                {
+                    BarBackgroundColor = Color.FromHex("#0ba348")
+                };
             }
             else
             {

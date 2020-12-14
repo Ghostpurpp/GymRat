@@ -16,9 +16,16 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Padding="25" VerticalOptions="StartAndExpand">
-                <Image Source="barbell.png" HorizontalOptions="Center" HeightRequest="150" WidthRequest="150"/>
-                <Label Text="Gym Rat" FontSize="Large" TextColor="{StaticResource Primary}" HorizontalOptions="Center"/>
+            <StackLayout Padding="25,60" VerticalOptions="StartAndExpand">
+                <Image Source="barbell_logo.png" HorizontalOptions="Center" HeightRequest="150" WidthRequest="150"/>
+                <Label Text="Gym Rat" FontSize="35" TextColor="{StaticResource Primary}" HorizontalOptions="Center">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="Android" Value="RussoOne-Regular.ttf#RussoOne" />
+                            <On Platform="iOS" Value="RussoOne-Regular" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
             </StackLayout>
             <StackLayout Padding="25" VerticalOptions="CenterAndExpand">
                 <StackLayout>

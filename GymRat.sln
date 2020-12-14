@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymRat.Android", "GymRat\Gy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymRat.iOS", "GymRat\GymRat.iOS\GymRat.iOS.csproj", "{9F57F8AC-A27B-4612-B4BB-C243B80F0CE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymRat", "GymRat\GymRat\GymRat.csproj", "{00B57A36-D5B1-4FA5-9063-85A67DDB1D87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymRat", "GymRat\GymRat\GymRat.csproj", "{00B57A36-D5B1-4FA5-9063-85A67DDB1D87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -12,8 +12,14 @@
     
     <ContentPage.Content>
         <StackLayout Padding="10" VerticalOptions="Center">
-            <Button 
-                Text="{Binding DisplayPicture}" 
+            <ImageButton
+                HeightRequest="100"
+                WidthRequest="100"
+                Padding="10"
+                BackgroundColor="{StaticResource Primary}"
+                HorizontalOptions="Center"
+                CornerRadius="20"
+                Source="camera.png"
                 Command="{Binding GetImageFile}" 
                 Margin="0,10"/>
             <Entry 
